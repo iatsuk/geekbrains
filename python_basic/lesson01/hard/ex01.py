@@ -10,3 +10,15 @@
 # Пример: Вася Пупкин, 31 год, вес 49 - следует заняться собой
 # Пример: Вася Пупкин, 41 год, вес 121 - следует обратится к врачу!
 # Пример: Вася Пупкин, 41 год, вес 49 - следует обратится к врачу!
+
+first_name = input("First name: ")
+last_name = input("Last name: ")
+age = int(input("Age: "))
+weight = int(input("Weight: "))
+patient = f'{first_name} {last_name}, {age} years old, {weight} weight -'
+
+if age < 30 and 50 < weight < 120:
+    print(patient, 'good health')
+elif weight < 50 or weight > 120:
+    if age > 30:
+        print(patient, 'consult with a doctor' if age > 40 else 'lead a correct life')
