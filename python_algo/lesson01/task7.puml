@@ -1,0 +1,18 @@
+@startuml
+:Начало;
+:a, b, c/
+if (a + b > c and a + c > b and b + c > a) then (true)
+  if (a == b == c) then (true)
+    :Треугольник равносторонний/
+  else (false)
+    if (a == b or a == c or b == c) then (true)
+      :Треугольник равнобедренный/
+    else (false)
+      :Треугольник разносторонний/
+    endif
+  endif
+else (false)
+  :Такого треугольника не существует/
+endif
+:Конец;
+@enduml

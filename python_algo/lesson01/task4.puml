@@ -1,0 +1,13 @@
+@startuml
+:Начало;
+:mn, mx/
+:rint = random.randint(mn, mx)]
+:Случайное целое: rint/
+:mn, mx/
+:rfloat = random.randint(mn, mx - 1) + random.random()]
+:Случайное вещественное: rfloat/
+:mn, mx/
+:rchar = str(chr(random.randint(mn, mx)))]
+:Случайный символ: rchar/
+:Конец;
+@enduml

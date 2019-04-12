@@ -2,6 +2,6 @@
 from functools import reduce
 
 n = input('Введите трехзначное число: ')
-vals = list(map(int, n))
-print(f'Сумма: {sum(vals)}')
-print(f'Произведение: {reduce(lambda x, y: x * y, vals, 1)}')
+nums = list(map(int, n))
+print('Сумма:', sum(nums))
+print('Произведение:', reduce(lambda x, y: x * y, nums, 1))

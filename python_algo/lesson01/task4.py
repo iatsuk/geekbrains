@@ -11,12 +11,12 @@ import random
 
 mn = int(input('Введите нижнюю границу для целого числа: '))
 mx = int(input('Введите верхнюю границу для целого числа: '))
-print(f'{random.randint(mn, mx)}')
+print(random.randint(mn, mx))
 
 mn = int(input('Введите нижнюю границу для вещественного числа: '))
 mx = int(input('Введите верхнюю границу для вещественного числа: '))
-print(f'{random.randint(mn, mx - 1) + random.random()}')
+print(random.randint(mn, mx - 1) + random.random())
 
 mn = ord(input('Введите нижнюю границу для символа: '))
 mx = ord(input('Введите верхнюю границу для символа: '))
-print(f'{str(chr(random.randint(mn, mx)))}')
+print(str(chr(random.randint(mn, mx))))
