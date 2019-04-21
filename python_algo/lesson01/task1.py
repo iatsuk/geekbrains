@@ -1,7 +1,12 @@
 # 1. Найти сумму и произведение цифр трехзначного числа, которое вводит пользователь.
-from functools import reduce
+n = int(input('Введите трехзначное число: '))
 
-n = input('Введите трехзначное число: ')
-nums = list(map(int, n))
-print('Сумма:', sum(nums))
-print('Произведение:', reduce(lambda x, y: x * y, nums, 1))
+a = n // 100
+b = n // 10 % 10
+c = n % 10
+
+abc_sum = a + b + c
+abc_prod = a * b * c
+
+print('Сумма:', abc_sum)
+print('Произведение:', abc_prod)

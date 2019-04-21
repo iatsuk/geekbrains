@@ -1,10 +1,10 @@
 @startuml
 :Начало;
 :n/
-:nums = list(map(int, n))]
-:s = sum(nums)]
-:p = reduce(lambda x, y: x * y, nums, 1)]
-:Сумма: s/
-:Произведение: p/
+:a = n // 100]
+:b = n // 10 % 10]
+:c = n % 10]
+:a + b + c/
+:a * b * c/
 :Конец;
 @enduml

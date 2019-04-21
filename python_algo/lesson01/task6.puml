@@ -1,7 +1,6 @@
 @startuml
 :Начало;
 :n/
-:s = str(chr(ord("a") + n - 1))]
-:s/
+:str(chr(ord("a") + n - 1))/
 :Конец;
 @enduml
