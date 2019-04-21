@@ -1,0 +1,18 @@
+@startuml
+:Начало;
+:year/
+if (year % 4 != 0) then (true)
+  :невисокосный/
+else (false)
+  if (year % 100 == 0) then (true)
+    if (year % 400 == 0) then (true)
+      :високосный/
+    else (false)
+      :невисокосный/
+    endif
+  else (false)
+    :високосный/
+  endif
+endif
+:Конец;
+@enduml

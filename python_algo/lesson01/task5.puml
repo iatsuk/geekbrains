@@ -1,0 +1,9 @@
+@startuml
+:Начало;
+:s1, s2/
+:s1 = ord(s1.lower())\ns2 = ord(s2.lower())]
+:s1_pos = s1 - ord("a") + 1\ns2_pos = s2 - ord("a") + 1]
+:s_size = s2 - s1 - 1]
+:s1_pos, s2_pos, s_size/
+:Конец;
+@enduml
