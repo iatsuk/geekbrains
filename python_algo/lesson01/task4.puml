@@ -1,0 +1,10 @@
+@startuml
+:Начало;
+:mn, mx/
+:random.randint(mn, mx)/
+:mn, mx/
+:random.randint(mn, mx - 1) + random.random()/
+:mn, mx/
+:str(chr(random.randint(mn, mx)))/
+:Конец;
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+:Начало;
+:a, b, c/
+if (b <= a <= c or c <= a <= b) then (true)
+  :a/
+else (false)
+  if (a <= b <= c or c <= b <= a) then (true)
+    :b/
+  else (false)
+    :c/
+  endif
+endif
+:Конец;
+@enduml

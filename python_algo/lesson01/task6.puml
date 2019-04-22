@@ -1,0 +1,6 @@
+@startuml
+:Начало;
+:n/
+:str(chr(ord("a") + n - 1))/
+:Конец;
+@enduml
