@@ -6,34 +6,29 @@
 # о невозможности деления на ноль, если он ввел 0 в качестве делителя.
 
 
-def process_operator(a, b):
-    op = input('Введите оператор или 0: ')
-    if op == '0':
-        return False  # выходим из приложения
-    elif op == '+':
-        print(f'{a} {op} {b} = {a + b}')
-        return True  # считаем результат и начинаем заново
-    elif op == '-':
-        print(f'{a} {op} {b} = {a - b}')
-        return True  # считаем результат и начинаем заново
-    elif op == '*':
-        print(f'{a} {op} {b} = {a * b}')
-        return True  # считаем результат и начинаем заново
-    elif op == '/':
-        print(f'{a} {op} {b} = {a / b}')
-        return True  # считаем результат и начинаем заново
-    else:
-        print('Не верный оператор')
-        return process_operator(a, b)  # уточняем оператор
-
-
-def main():
+repeat_main = True
+while repeat_main:
     a = int(input('Введите первое число: '))
     b = int(input('Введите второе число: '))
-    return process_operator(a, b)
+    get_operator = True
+    while get_operator:
+        op = input('Введите оператор или 0: ')
+        if op == '0':
+            get_operator = False
+            repeat_main = False  # выходим из приложения
+        elif op == '+':
+            print(f'{a} {op} {b} = {a + b}')
+            get_operator = False  # выводим результат
+        elif op == '-':
+            print(f'{a} {op} {b} = {a - b}')
+            get_operator = False  # выводим результат
+        elif op == '*':
+            print(f'{a} {op} {b} = {a * b}')
+            get_operator = False  # выводим результат
+        elif op == '/':
+            print(f'{a} {op} {b} = {a / b}')
+            get_operator = False  # выводим результат
+        else:
+            print('Не верный оператор')
 
-
-if __name__ == '__main__':
-    while main():
-        pass
-    print('До свидания!')
+print('До свидания!')

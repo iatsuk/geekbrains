@@ -1,0 +1,12 @@
+@startuml
+:Начало;
+:n/
+while (for i in range(32, 127, 10))
+  :to = min(i + 10, 128)]
+  while (for y in range(i, to))
+      :print(y, chr(y), end='\t')/
+  endwhile
+  :print()/
+endwhile
+:Конец;
+@enduml

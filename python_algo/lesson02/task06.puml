@@ -1,0 +1,17 @@
+@startuml
+:Начало;
+:x/
+while (for step in range(0, 10))
+  :n/
+  if (n > x) then (true)
+    :Меньше/
+  elseif (n < x) then (true)
+    :Больше/
+  else (false)
+    :Правильно!/
+    break
+  endif
+endwhile
+->no;
+:Конец;
+@enduml

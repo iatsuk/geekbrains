@@ -1,0 +1,12 @@
+@startuml
+:Начало;
+:n/
+:elem = 1.0
+series_sum = 0.0]
+while (for _ in range(n))
+  :series_sum += elem
+  elem /= -2]
+endwhile
+:series_sum/
+:Конец;
+@enduml

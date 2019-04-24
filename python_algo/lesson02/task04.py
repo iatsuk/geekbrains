@@ -6,5 +6,5 @@ elem = 1.0
 series_sum = 0.0
 for _ in range(n):
     series_sum += elem
-    elem = elem / -2
+    elem /= -2
 print(series_sum)
