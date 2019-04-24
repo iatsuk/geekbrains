@@ -5,33 +5,35 @@
 # то программа должна сообщать ему об ошибке и снова запрашивать знак операции. Также сообщать пользователю
 # о невозможности деления на ноль, если он ввел 0 в качестве делителя.
 
-ops = {
-    '+': lambda x, y: x + y,
-    '-': lambda x, y: x - y,
-    '*': lambda x, y: x * y,
-    '/': lambda x, y: x / y
-}
 
-
-def calc(a, b):
+def process_operator(a, b):
     op = input('Введите оператор или 0: ')
     if op == '0':
-        return False
-    if op not in ops.keys():
-        print('Не верный оператор')
-        return calc(a, b)
+        return False  # выходим из приложения
+    elif op == '+':
+        print(f'{a} {op} {b} = {a + b}')
+        return True  # считаем результат и начинаем заново
+    elif op == '-':
+        print(f'{a} {op} {b} = {a - b}')
+        return True  # считаем результат и начинаем заново
+    elif op == '*':
+        print(f'{a} {op} {b} = {a * b}')
+        return True  # считаем результат и начинаем заново
+    elif op == '/':
+        print(f'{a} {op} {b} = {a / b}')
+        return True  # считаем результат и начинаем заново
     else:
-        print(f'{a} {op} {b} = {ops[op](a, b)}')
-        return True
+        print('Не верный оператор')
+        return process_operator(a, b)  # уточняем оператор
 
 
 def main():
-    print('Введите 2 числа: ')
-    a = int(input())
-    b = int(input())
-    if calc(a, b):
-        main()
+    a = int(input('Введите первое число: '))
+    b = int(input('Введите второе число: '))
+    return process_operator(a, b)
 
 
 if __name__ == '__main__':
-    main()
+    while main():
+        pass
+    print('До свидания!')

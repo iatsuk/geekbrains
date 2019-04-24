@@ -1,0 +1,39 @@
+@startuml
+:Начало;
+while (main())
+  :pass]
+endwhile
+:Конец;
+
+detach
+
+:main();
+:a, b/
+:Возвращаем результат
+ process_operator(a, b);
+
+detach
+
+:process_operator(a, b);
+:op/
+if (op == '0') then (true)
+  :result = False]
+elseif (op == '+') then (true)
+  :f'{a} {op} {b} = {a + b}'/
+  :result = True]
+elseif (op == '-') then (true)
+  :f'{a} {op} {b} = {a - b}'/
+  :result = True]
+elseif (op == '*') then (true)
+  :f'{a} {op} {b} = {a * b}'/
+  :result = True]
+elseif (op == '/') then (true)
+  :f'{a} {op} {b} = {a / b}'/
+  :result = True]
+else (false)
+  :'Не верный оператор'/
+  :result = process_operator(a, b)]
+endif
+:Возвращаем результат
+              result;
+@enduml

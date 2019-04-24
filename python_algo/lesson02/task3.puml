@@ -1,0 +1,11 @@
+@startuml
+:Начало;
+:n/
+:revert = 0]
+while (n > 0)
+  :revert = revert * 10 + n % 10]
+  :n = n // 10]
+endwhile
+:revert/
+:Конец;
+@enduml
