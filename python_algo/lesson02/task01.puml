@@ -1,0 +1,30 @@
+@startuml
+:Начало;
+:repeat_main = True]
+while (repeat_main) is (true)
+  :a, b/
+  :get_operator = True]
+  while (get_operator) is (true)
+    :op/
+    if (op == '0') then (true)
+      :repeat_main = False]
+      :get_operator = False]
+    elseif (op == '+') then (true)
+      :f'{a} {op} {b} = {a + b}'/
+      :get_operator = False]
+    elseif (op == '-') then (true)
+      :f'{a} {op} {b} = {a - b}'/
+      :get_operator = False]
+    elseif (op == '*') then (true)
+      :f'{a} {op} {b} = {a * b}'/
+      :get_operator = False]
+    elseif (op == '/') then (true)
+      :f'{a} {op} {b} = {a / b}'/
+      :get_operator = False]
+    else (false)
+      :'Не верный оператор'/
+    endif
+  endwhile (false)
+endwhile (false)
+:Конец;
+@enduml

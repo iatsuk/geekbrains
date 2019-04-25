@@ -1,0 +1,16 @@
+@startuml
+:Начало;
+:n/
+:even = 0
+odd = 0]
+while (n > 0)
+  if (n % 2 == 0) then (true)
+    :even = even + 1]
+  else (false)
+    :odd = odd + 1]
+  endif
+  :n = n // 10]
+endwhile
+:even, odd/
+:Конец;
+@enduml
