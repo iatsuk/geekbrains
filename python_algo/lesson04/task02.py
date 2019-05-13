@@ -23,9 +23,9 @@ def bust(n):
 def sieve(n):
     primes = [2]
     i = 2
-    while len(primes) < n:
+    while len(primes) <= n:
         for prime in primes:
-            if i % prime == 0:
+            if i >= prime ** 2 and i % prime == 0:
                 break
         else:
             primes.append(i)
