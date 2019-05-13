@@ -4,30 +4,30 @@
 # Первый — с помощью алгоритма «Решето Эратосфена».
 # Второй — без использования «Решета Эратосфена».
 
-k = int(input("Введите порядковый номер простого числа: "))
 
-
-def prime(n):
-    lst = []
-    while len(lst) < n:
-        for i in range(2, n + 1):
-            for j in range(2, i):
-                if i % j == 0:
-                    break
-            else:
-                lst.append(i)
-    return lst[-1]
-
-
-def sieve(n):
-    a = range(n + 1)
-    lst = []
-
+# Алгоритм полного перебора. Обладает квадратичной вычислительной сложностью O(N ** 2).
+def bust(n):
+    primes = []
     i = 2
-    while i <= n:
-        if a[i] != 0:
-            lst.append(a[i])
-            for j in range(i, n + 1, i):
-                a[j] = 0
+    while len(primes) < n:
+        for j in range(2, i):
+            if i % j == 0:
+                break
+        else:
+            primes.append(i)
         i += 1
-    print(lst)
+    return primes[-1]
+
+
+# Алгоритм "Решето Эратосфена".
+def sieve(n):
+    primes = [2]
+    i = 2
+    while len(primes) < n:
+        for prime in primes:
+            if i % prime == 0:
+                break
+        else:
+            primes.append(i)
+        i += 1
+    return primes[-1]
