@@ -45,12 +45,12 @@ def sieve(n):
 # print("Алгоритм перебора")
 # print("N\t\tt, msec")
 # for i in [1, 10, 100, 1000, 2000, 5000]:
-#     print(i, '\t', timeit.timeit(f'{bust}\nbust({i})', number=10))
+#     print(i, '\t', timeit.timeit(f'{bust}\nbust({i})', number=10) / 10)
 #
 # print("Решето Эратосфена")
 # print("N\t\tt, msec")
 # for i in [1, 10, 100, 1000, 2000, 5000]:
-#     print(i, '\t', timeit.timeit(f'{sieve}\nsieve({i})', number=10))
+#     print(i, '\t', timeit.timeit(f'{sieve}\nsieve({i})', number=10) / 10)
 
 # Алгоритм перебора
 # N		t, sec
