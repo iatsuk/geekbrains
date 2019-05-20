@@ -15,8 +15,8 @@ def solution1(n):
         if deep == 1:
             return elem, sys.getsizeof(elem) + sys.getsizeof(deep)
         else:
-            elem_, size_ = recursive(elem * -0.5, deep - 1)
-            return elem + elem_, sys.getsizeof(elem) + sys.getsizeof(deep) + size_
+            deep_elem, deep_size = recursive(elem * -0.5, deep - 1)
+            return elem + deep_elem, sys.getsizeof(elem) + sys.getsizeof(deep) + deep_size
     return recursive(1, n)
 
 
@@ -25,7 +25,7 @@ def solution2(n):
     lst = [1]
     for _ in range(1, n):
         lst.append(lst[-1] / -2)
-    return sum(lst), sys.getsizeof(lst) + sys.getsizeof(range(1, n))
+    return sum(lst), sys.getsizeof(lst) + sys.getsizeof(range(1, n)) + sum([sys.getsizeof(e) for e in lst])
 
 
 # Решение №3. Перебор элементов с аккумулятором
@@ -58,7 +58,7 @@ if __name__ == '__main__':
 # Количество используемой памяти:  420
 # ===Решение 2===
 # Ответ для n=8:  0.6640625
-# Количество используемой памяти:  184
+# Количество используемой памяти:  380
 # ===Решение 3===
 # Ответ для n=8:  0.6640625
 # Количество используемой памяти:  96
