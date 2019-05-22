@@ -34,7 +34,7 @@ def order_statistics(array, k):
 if __name__ == '__main__':
     # создаем массив и заполняем случайными числами
     m = 5 * 2 + 1
-    a = [random.randint(-100, 100) for _ in range(m)]
+    a = [random.randint(0, 5) for _ in range(m)]
     print(a)
     # находим медиану
     med_idx = m // 2
@@ -42,4 +42,4 @@ if __name__ == '__main__':
     print('Медиана:', med)
     # проверка решения
     a.sort()
-    print('Решение', 'верное' if a[med_idx] == med else 'не верное')
+    print('верно' if a[med_idx] == med else 'не верно')

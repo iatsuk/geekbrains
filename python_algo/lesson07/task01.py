@@ -21,7 +21,11 @@ def bubble_sort(array):
 if __name__ == '__main__':
     # генерируем
     a = [random.randint(-100, 99) for _ in range(10)]
+    b = a.copy()
     print(a)
     # сортируем
     bubble_sort(a)
     print(a)
+    # проверяем
+    b.sort()
+    print('верно' if a == b else 'не верно')
