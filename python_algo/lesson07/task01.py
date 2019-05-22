@@ -4,3 +4,24 @@
 # ● алгоритм сортировки должен быть в виде функции, которая принимает на вход массив данных,
 # ● постарайтесь сделать алгоритм умнее, но помните, что у вас должна остаться сортировка пузырьком.
 # Улучшенные версии сортировки, например, расчёской, шейкерная и другие в зачёт не идут.
+import random
+
+
+def bubble_sort(array):
+    for i in range(len(array)):
+        is_sorted = True
+        for j in range(len(array) - i - 1):
+            if array[j] > array[j + 1]:
+                array[j], array[j + 1] = array[j + 1], array[j]
+                is_sorted = False
+        if is_sorted:
+            break
+
+
+if __name__ == '__main__':
+    # генерируем
+    a = [random.randint(-100, 99) for _ in range(10)]
+    print(a)
+    # сортируем
+    bubble_sort(a)
+    print(a)
