@@ -19,8 +19,9 @@ def bubble_sort(array):
 
 
 if __name__ == '__main__':
+    size = 10
     # генерируем
-    a = [random.randint(-100, 99) for _ in range(10)]
+    a = [random.randrange(-100, 100) for _ in range(size)]
     b = a.copy()
     print(a)
     # сортируем

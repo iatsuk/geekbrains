@@ -26,8 +26,9 @@ def merge_sort(array):
 
 
 if __name__ == '__main__':
+    size = 10
     # генерируем
-    a = [random.randint(0, 49) for _ in range(10)]
+    a = [random.randrange(0, 50) for _ in range(size)]
     print(a)
     # сортируем
     b = merge_sort(a)

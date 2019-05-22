@@ -32,9 +32,10 @@ def order_statistics(array, k):
 
 
 if __name__ == '__main__':
+    n = int(input('Введите натуральное число n: '))
     # создаем массив и заполняем случайными числами
-    m = 5 * 2 + 1
-    a = [random.randint(0, 5) for _ in range(m)]
+    m = n * 2 + 1
+    a = [random.randrange(-10, 10) for _ in range(m)]
     print(a)
     # находим медиану
     med_idx = m // 2
