@@ -4,37 +4,31 @@
 # Примечание: задачу можно решить без сортировки исходного массива. Но если это слишком сложно,
 # используйте метод сортировки, который не рассматривался на уроках (сортировка слиянием также недопустима).
 import random
+from collections import defaultdict
 
 
 def order_statistics(array, k):
-    def partition(array, left, right):
-        idx = left + int((right - left) / 2)
-        mid = array[idx]
-        lower = []
-        middle = []
-        higher = []
-        for i in range(left, right):
-            if array[i] < mid:
-                lower.append(array[i])
-            elif array[i] > mid:
-                higher.append(array[i])
+    def partition(array):
+        pivot = array[len(array) // 2]
+        data = defaultdict(list)
+        for e in array:
+            if e < pivot:
+                data['lower'].append(e)
+            elif e > pivot:
+                data['higher'].append(e)
             else:
-                middle.append(array[i])
-        ordered = lower + middle + higher
-        for i in range(left, right):
-            array[i] = ordered[i - left]
-        return left + len(lower)
+                data['same'].append(e)
+        return data['lower'], data['same'], data['higher']
 
-    left = 0
-    right = len(array)
     while True:
-        mid = partition(array, left, right)
-        if mid == k:
-            return array[mid]
-        elif k < mid:
-            right = mid
+        lower, same, higher = partition(array)
+        if (k >= len(lower)) and (k < len(lower) + len(same)):
+            return same[0]
+        elif k < len(lower):
+            array = lower
         else:
-            left = mid + 1
+            k = k - len(lower) - len(same)
+            array = higher
 
 
 if __name__ == '__main__':
@@ -43,7 +37,7 @@ if __name__ == '__main__':
     a = [random.randint(-100, 100) for _ in range(m)]
     print(a)
     # находим медиану
-    med_idx = int(m / 2) - 1
+    med_idx = m // 2
     med = order_statistics(a, med_idx)
     print('Медиана:', med)
     # проверка решения
